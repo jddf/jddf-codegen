@@ -1,0 +1,100 @@
+{
+  "definitions": {
+    "ref": {
+      "properties": {
+        "a": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "properties": {
+    "empty": {},
+    "ref": {
+      "ref": "ref"
+    },
+    "type": {
+      "properties": {
+        "a": {
+          "type": "boolean"
+        },
+        "b": {
+          "type": "string"
+        },
+        "c": {
+          "type": "string"
+        },
+        "d": {
+          "type": "int8"
+        },
+        "e": {
+          "type": "uint8"
+        },
+        "f": {
+          "type": "int16"
+        },
+        "g": {
+          "type": "uint16"
+        },
+        "h": {
+          "type": "int32"
+        },
+        "i": {
+          "type": "uint32"
+        },
+        "j": {
+          "type": "float32"
+        },
+        "k": {
+          "type": "float64"
+        }
+      }
+    },
+    "enum": {
+      "enum": [
+        "FOO",
+        "BAR",
+        "BAZ"
+      ]
+    },
+    "elements": {
+      "elements": {
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "values": {
+      "values": {
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "discriminator": {
+      "discriminator": {
+        "tag": "tag",
+        "mapping": {
+          "a": {
+            "properties": {
+              "a": {
+                "type": "string"
+              }
+            }
+          },
+          "b": {
+            "properties": {
+              "b": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

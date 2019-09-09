@@ -1,0 +1,27 @@
+{
+  "discriminator": {
+    "tag": "eventType",
+    "mapping": {
+      "user_logged_in": {
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "loginMethod": {
+            "type": "string"
+          }
+        }
+      },
+      "user_logged_out": {
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "logoutMethod": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
