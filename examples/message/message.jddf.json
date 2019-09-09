@@ -1,0 +1,43 @@
+{
+  "definitions": {
+    "user": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "properties": {
+    "messageId": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "timestamp"
+    },
+    "details": {
+      "discriminator": {
+        "tag": "type",
+        "mapping": {
+          "user_created": {
+            "properties": {
+              "user": {
+                "ref": "user"
+              }
+            }
+          },
+          "user_deleted": {
+            "properties": {
+              "userId": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
