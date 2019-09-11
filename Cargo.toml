@@ -2,7 +2,7 @@
 name = "jddf-codegen"
 description = "Generate code from JDDF schemas"
 license = "MIT"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Ulysse Carion <ulysse@segment.com>"]
 edition = "2018"
 
