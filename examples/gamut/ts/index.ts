@@ -2,8 +2,18 @@ export interface Ref {
   a: string;
 }
 
-export interface GamutValues {
-  a: string;
+export interface GamutType {
+  a: boolean;
+  c: string;
+  j: number;
+  k: number;
+  b: string;
+  f: number;
+  d: number;
+  h: number;
+  e: number;
+  g: number;
+  i: number;
 }
 
 export interface GamutDiscriminatorB {
@@ -16,31 +26,21 @@ export interface GamutDiscriminatorA {
   a: string;
 }
 
-export interface GamutType {
-  b: string;
-  d: number;
-  f: number;
-  c: string;
-  e: number;
-  j: number;
-  a: boolean;
-  h: number;
-  k: number;
-  g: number;
-  i: number;
-}
-
 export interface GamutElements {
   a: string;
 }
 
+export interface GamutValues {
+  a: string;
+}
+
 export interface Gamut {
-  enum: "BAZ" | "BAR" | "FOO";
-  values: { [name: string]: GamutValues};
-  discriminator: GamutDiscriminatorB | GamutDiscriminatorA;
-  empty: any;
   type: GamutType;
-  elements: GamutElements[];
   ref: Ref;
+  enum: "FOO" | "BAR" | "BAZ";
+  discriminator: GamutDiscriminatorB | GamutDiscriminatorA;
+  elements: GamutElements[];
+  empty: any;
+  values: { [name: string]: GamutValues};
 }
 

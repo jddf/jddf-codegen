@@ -20,10 +20,12 @@ fn main() -> Result<(), Error> {
         );
 
     let app = targets::typescript::Target::args(app);
+    let app = targets::golang::Target::args(app);
 
     let matches = app.get_matches();
 
     let target_ts = targets::typescript::Target::from_args(&matches)?;
+    let target_go = targets::golang::Target::from_args(&matches)?;
 
     // Parse out the input schema, and ensure it is valid.
     let input = matches.value_of("INPUT").unwrap();
@@ -39,10 +41,20 @@ fn main() -> Result<(), Error> {
         None
     };
 
+    let ast_go = if let Some(ref t) = target_go {
+        Some(t.transform(&schema)?)
+    } else {
+        None
+    };
+
     // Serialize each of the ASTs. At this point, only IO errors can cause
     // issues.
     if let Some(ref t) = target_ts {
         t.serialize(&ast_ts.unwrap())?;
+    }
+
+    if let Some(ref t) = target_go {
+        t.serialize(&ast_go.unwrap())?;
     }
 
     Ok(())

@@ -15,7 +15,7 @@ export interface MessageDetailsUserCreated {
 
 export interface Message {
   details: MessageDetailsUserDeleted | MessageDetailsUserCreated;
-  messageId: string;
   timestamp: string;
+  messageId: string;
 }
 

@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "favoriteNumbers": {
+      "elements": {
+        "type": "int32"
+      }
+    }
+  }
+}
